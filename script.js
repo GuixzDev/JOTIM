@@ -1,7 +1,5 @@
-// Aguarda o carregamento completo do DOM para executar o script
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Dados fictícios das mudas
     const mudasData = [
         {
             id: 'JTM-001',
@@ -36,19 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             progresso: 5
         }
     ];
-
-    // Seleciona o container onde os cards serão inseridos
     const container = document.getElementById('mudas-container');
-
-    // Verifica se estamos na página de monitoramento (se o container existe)
     if (container) {
-        // Itera sobre cada objeto de muda nos dados
         mudasData.forEach(muda => {
-            // Cria um novo elemento 'div' para o card
+            
             const card = document.createElement('div');
-            card.className = 'muda-card'; // Adiciona a classe CSS
+            card.className = 'muda-card'; 
 
-            // Define o conteúdo HTML interno do card
             card.innerHTML = `
                 <h3>${muda.nome}</h3>
                 <p><strong>Espécie:</strong> <em>${muda.especie}</em> <br> <strong>ID:</strong> ${muda.id}</p>
@@ -70,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="progress-text">${muda.progresso}%</span>
             `;
 
-            // Adiciona o card recém-criado ao container no HTML
             container.appendChild(card);
         });
     }
